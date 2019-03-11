@@ -1,5 +1,5 @@
 {
-    "name": "vue-mc",
+    "name": "vue-mc-sifex",
     "version": "0.5.2",
     "description": "",
     "license": "MIT",
@@ -22,12 +22,12 @@
         "vue-mc.es.js"
     ],
     "bugs": {
-        "url": "https://github.com/FiguredLimited/vue-mc/issues"
+        "url": "https://github.com/sifex/vue-mc/issues"
     },
-    "homepage": "https://github.com/FiguredLimited/vue-mc",
+    "homepage": "https://github.com/sifex/vue-mc",
     "repository": {
         "type": "git",
-        "url": "https://github.com/FiguredLimited/vue-mc.git"
+        "url": "https://github.com/sifex/vue-mc.git"
     },
     "author": {
         "name": "Rudi Theunissen",
