@@ -16,6 +16,7 @@
         "validation"
     ],
     "files": [
+        "src",
         "validation",
         "vue-mc.js",
         "vue-mc.es.js"
