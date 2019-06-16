@@ -1,38 +1,36 @@
-import Vue              from 'vue'
-import Base             from './Base.js'
-import Collection       from './Collection.js'
-import ResponseError    from '../Errors/ResponseError.js'
-import ValidationError  from '../Errors/ValidationError.js'
-import {
-    castArray,
-    cloneDeep,
-    defaults,
-    defaultTo,
-    each,
-    filter,
-    first,
-    flow,
-    get,
-    has,
-    head,
-    invert,
-    isArray,
-    isEmpty,
-    isEqual,
-    isFunction,
-    isNil,
-    isObject,
-    isObjectLike,
-    isPlainObject,
-    isString,
-    isUndefined,
-    keys,
-    mapValues,
-    merge,
-    once,
-    pick,
-    values,
-} from 'lodash'
+import Vue             from 'vue'
+import Base            from './Base.js'
+import Collection      from './Collection.js'
+import ResponseError   from '../Errors/ResponseError.js'
+import ValidationError from '../Errors/ValidationError.js'
+import castArray       from 'lodash/castArray'
+import cloneDeep       from 'lodash/cloneDeep'
+import defaults        from 'lodash/defaults'
+import defaultTo       from 'lodash/defaultTo'
+import each            from 'lodash/each'
+import filter          from 'lodash/filter'
+import first           from 'lodash/first'
+import flow            from 'lodash/flow'
+import get             from 'lodash/get'
+import has             from 'lodash/has'
+import head            from 'lodash/head'
+import invert          from 'lodash/invert'
+import isArray         from 'lodash/isArray'
+import isEmpty         from 'lodash/isEmpty'
+import isEqual         from 'lodash/isEqual'
+import isFunction      from 'lodash/isFunction'
+import isNil           from 'lodash/isNil'
+import isObject        from 'lodash/isObject'
+import isObjectLike    from 'lodash/isObjectLike'
+import isPlainObject   from 'lodash/isPlainObject'
+import isString        from 'lodash/isString'
+import isUndefined     from 'lodash/isUndefined'
+import keys            from 'lodash/keys'
+import mapValues       from 'lodash/mapValues'
+import merge           from 'lodash/merge'
+import once            from 'lodash/once'
+import pick            from 'lodash/pick'
+import values          from 'lodash/values'
 
 /**
  * Reserved keywords that can't be used for attribute or option names.
@@ -1046,13 +1044,22 @@ class Model extends Base {
      * @param {Object|null} response
      */
     onSaveSuccess(response) {
+        let action;
 
         // Clear errors because the request was successful.
         this.clearErrors();
 
-        // Update this model with the data that was returned in the response.
         if (response) {
-            this.update(response.getData());
+            let responseData = response.getData()
+
+            // Find if it's a create or update action
+            action = 'update';
+            if (response.getStatus() === 201 || ( ! this.saved('id') && (isPlainObject(responseData) && get(responseData, 'id')))) {
+                action = 'create'
+            }
+
+            // Update this model with the data that was returned in the response.
+            this.update(responseData);
         }
 
         Vue.set(this, 'saving', false);
@@ -1061,7 +1068,11 @@ class Model extends Base {
         // Automatically add to all registered collections.
         this.addToAllCollections();
 
-        this.emit('save', {error: null});
+        this.emit('save.success', {error: null});
+
+        if (action) {
+            this.emit(action, {error: null});
+        }
     }
 
     /**
@@ -1109,8 +1120,8 @@ class Model extends Base {
         } else {
             this.onFatalSaveFailure(error);
         }
-
-        this.emit('save', {error});
+        
+        this.emit('save.failure', { error: error });
     }
 
     /**
@@ -1179,6 +1190,8 @@ class Model extends Base {
      * @returns {boolean} `false` if the request should not be made.
      */
     onSave() {
+        this.emit('save', { error: null });
+        
         return new Promise((resolve, reject) => {
 
             // Don't save if we're already busy saving this model.
