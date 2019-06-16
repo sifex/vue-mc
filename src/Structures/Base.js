@@ -576,7 +576,9 @@ class Base {
         let form = new FormData();
 
         each(data, (value, key) => {
-            form.append(key, value)
+            if (value) {
+	            form.append(key, value)
+            }
         });
 
         return form;
