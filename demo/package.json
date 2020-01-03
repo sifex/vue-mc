@@ -1,14 +1,19 @@
 {
   "dependencies": {
-    "cross-env": "^5.1.1",
-    "element-theme-default": "^1.4.9",
-    "element-ui": "^2.0.3",
-    "laravel-mix": "^1.6.1",
-    "lodash": "^4.17.4",
-    "vue": "^2.5.3",
-    "vue-mc": "0.2.2"
+    "cross-env": "^5.2.0",
+    "element-theme-default": "^1.4.13",
+    "element-ui": "^2.11.1",
+    "laravel-mix": "4.1.2",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0",
+    "vue": "^2.6.10",
+    "vue-mc": "0.5.0"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "vue-template-compiler": "^2.6.10"
   }
 }
