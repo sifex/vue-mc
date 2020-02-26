@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/camelcase */
 /**
  * Afrikaans
  */
-export const af_za = {
+export const af_za: Bundle = {
     locale: 'af-ZA',
     messages: {
         after: "Moet na ${date} wees",
@@ -47,12 +48,12 @@ export const af_za = {
         url: "Moet 'n geldige URL wees",
         uuid: "Moet 'n geldige UUID wees",
     },
-}
+};
 
 /**
  * Arabic - Republic of Iraq
  */
-export const ar_iq = {
+export const ar_iq: Bundle = {
     locale: 'ar-IQ',
     messages: {
         after: 'یجب ان یکون بعد ${date}',
@@ -98,12 +99,12 @@ export const ar_iq = {
         url: 'يجب أن يكون عنوان URL صالحًا',
         uuid: 'يجب أن يكون UUID صالح',
     },
-}
+};
 
 /**
  * English - United States (Default)
  */
-export const en_us = {
+export const en_us: Bundle = {
     locale: 'en-US',
     messages: {
         after: 'Must be after ${date}',
@@ -149,12 +150,12 @@ export const en_us = {
         url: 'Must be a valid URL',
         uuid: 'Must be a valid UUID',
     },
-}
+};
 
 /**
  * Persian - Islamic Republic of Iran
  */
-export const fa_ir = {
+export const fa_ir: Bundle = {
     locale: 'fa-IR',
     messages: {
         after: 'باید بعد از ${date} باشد.',
@@ -200,11 +201,63 @@ export const fa_ir = {
         url: 'باید یک آدرس URL معتبر باشد',
         uuid: 'باید یک UUID معتبر باشد',
     },
-}
+};
+
+/**
+ * French
+ */
+export const fr_fr: Bundle = {
+    locale: 'fr-FR',
+    messages: {
+        after: 'Doit être après ${date}',
+        alpha: 'Ne peut utiliser que des lettres',
+        alphanumeric: 'Ne peut utiliser que des chiffres et des lettres',
+        array: 'Doit être un tableau',
+        ascii: 'Doit être ASCII',
+        base64: 'Doit être un Base64 valide',
+        before: 'Doit être avant le ${date}',
+        between: 'Doit être entre ${min} et ${max}',
+        between_inclusive: 'Doit être entre ${min} et ${max} compris',
+        boolean: 'MDoit être vrai ou faux',
+        creditcard: 'Doit être un numéro de carte de crédit valide',
+        date: 'Doit être une date valide',
+        dateformat: 'Doit utiliser le format "${format}"',
+        defined: 'Requis',
+        email: 'Doit être une adresse email valide',
+        empty: 'Doit être vide',
+        equals: 'Doit être égal(e) à ${other}',
+        gt: 'Doit être plus grand que ${min}',
+        gte: 'Doit être plus grand ou égal(e) à ${min}',
+        integer: 'Doit être un nombre entier',
+        ip: 'Doit être une adresse IP valide',
+        isblank: 'Ne doit pas être vide',
+        isnil: 'Requis',
+        isnull: 'Requis',
+        iso8601: 'Doit être une date ISO8601 valide',
+        json: 'Doit être un JSON valide',
+        length: 'Doit avoir une longueur d\'au moins ${min}',
+        length_between: 'Doit avoir une longueur entre  ${min} et ${max}',
+        lt: 'Doit être plus petit que ${max}',
+        lte: 'Doit être plus petit ou égal(e) à ${max}',
+        match: 'Doit correspondre à "${pattern}"',
+        negative: 'Doit être un nombre négatif',
+        not: 'Ne peut pas être ${value}',
+        number: 'Doit être un nombre',
+        numeric: 'Doit être numérique',
+        object: 'Doit être un object',
+        positive: 'Doit être un nombre positif',
+        required: 'Requis',
+        same: 'Doit avoir la même valeur que "${other}"',
+        string: 'Soit être une chaîne de caractères',
+        url: 'Doit être une adresse URL valide',
+        uuid: 'Doit être un UUID valide',
+    },
+};
+
 /**
  * Portuguese - Brazil
  */
-export const pt_br = {
+export const pt_br: Bundle = {
     locale: 'pt-BR',
     messages: {
         after: 'Deve ser uma data depois de ${date}',
@@ -250,12 +303,12 @@ export const pt_br = {
         url: 'Deve ser uma URL válida',
         uuid: 'Deve ser um UUID válido',
     },
-}
+};
 
 /**
  * Dutch - The Netherlands
  */
-export const nl_nl = {
+export const nl_nl: Bundle = {
     locale: 'nl-NL',
     messages: {
         after: 'Moet na ${date} zijn',
@@ -301,12 +354,12 @@ export const nl_nl = {
         url: 'Moet een geldige URL zijn',
         uuid: 'Moet een geldige UUID zijn',
     },
-}
+};
 
 /**
  * Polish - Poland
  */
-export const pl_pl = {
+export const pl_pl: Bundle = {
     locale: 'pl-PL',
     messages: {
         after: 'Musi być datą późniejszą od ${date}',
@@ -352,12 +405,12 @@ export const pl_pl = {
         url: 'Musi być poprawnym adresem URL',
         uuid: 'Musi być poprawnym identyfikatorem UUID',
     },
-}
+};
 
 /**
  * Russian - Russia
  */
-export const ru_ru = {
+export const ru_ru: Bundle = {
     locale: 'ru-RU',
     messages: {
         after: 'Должен быть после ${date}',
@@ -403,12 +456,12 @@ export const ru_ru = {
         url: 'Должен быть действительным URL',
         uuid: 'Должен быть действительным UUID',
     },
-}
+};
 
 /**
  * Danish - Denmark
  */
-export const da_dk = {
+export const da_dk: Bundle = {
     locale: 'da-DK',
     messages: {
         after: 'Skal være efter ${date}',
@@ -454,12 +507,12 @@ export const da_dk = {
         url: 'Skal være en gyldig URL',
         uuid: 'Skal være en gyldig UUID',
     },
-}
+};
 
 /**
  * Indonesian - Indonesia
  */
-export const id_id = {
+export const id_id: Bundle = {
     locale: 'id-ID',
     messages: {
         after: 'Harus sesudah ${date}',
@@ -505,12 +558,12 @@ export const id_id = {
         url: 'Harus berupa URL valid',
         uuid: 'Harus berupa UUID valid',
     },
-}
+};
 
 /**
  * German - Germany
  */
-export const de_de = {
+export const de_de: Bundle = {
     locale: 'de-DE',
     messages: {
         after: 'Muss später sein als ${date}',
@@ -556,4 +609,56 @@ export const de_de = {
         url: 'Muss eine valide URL sein',
         uuid: 'Muss eine valide UUID sein',
     },
+};
+
+export interface Bundle {
+    locale: string;
+    messages: Messages;
+}
+
+export interface Messages {
+    [key: string]: string;
+
+    after: string;
+    alpha: string;
+    alphanumeric: string;
+    array: string;
+    ascii: string;
+    base64: string;
+    before: string;
+    between: string;
+    between_inclusive: string;
+    boolean: string;
+    creditcard: string;
+    date: string;
+    dateformat: string;
+    defined: string;
+    email: string;
+    empty: string;
+    equals: string;
+    gt: string;
+    gte: string;
+    integer: string;
+    ip: string;
+    isblank: string;
+    isnil: string;
+    isnull: string;
+    iso8601: string;
+    json: string;
+    length: string;
+    length_between: string;
+    lt: string;
+    lte: string;
+    match: string;
+    negative: string;
+    not: string;
+    number: string;
+    numeric: string;
+    object: string;
+    positive: string;
+    required: string;
+    same: string;
+    string: string;
+    url: string;
+    uuid: string;
 }
